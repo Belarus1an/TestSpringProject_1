@@ -39,4 +39,17 @@ public class Worker {
 
         return workerList;
     }
+
+    public static List<Worker> showWorkers(List<Worker> workerList, long salary){
+
+        List<Worker> newWorkerList = new ArrayList<>();
+
+        for (Worker value: workerList){
+            if (value.getSalary() >= salary){
+                newWorkerList.add(value);
+            }
+        }
+
+        return newWorkerList;
+    }
 }

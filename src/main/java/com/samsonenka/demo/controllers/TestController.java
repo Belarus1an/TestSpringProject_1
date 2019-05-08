@@ -17,17 +17,18 @@ public class TestController {
     public String getWorkers(Model model){
 
         workerList = Worker.addWorkersList();
-
-        //my logic
-        for (Worker value: workerList){
-            if (value.getSalary() < 4000){
-                value.setSalary(value.getSalary() + 1);
-            }
-        }
-
         model.addAttribute("workers", workerList);
 
         return "index";
+    }
+
+    @GetMapping("/show")
+    public String showWorkers(Model model){
+
+        workerList = Worker.showWorkers(workerList, 4000);
+        model.addAttribute("workers", workerList);
+
+        return "workers";
     }
 
 }
