@@ -17,7 +17,8 @@ public class TestController {
     public String getWorkers(Model model){
 
         workerList = Worker.addWorkersList();
-        
+
+        //my logic
         for (Worker value: workerList){
             if (value.getSalary() < 4000){
                 value.setSalary(value.getSalary() + 1);
